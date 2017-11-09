@@ -5,9 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'mysql2'            # MySQL DB
-gem 'puma', '~> 3.7'    # Use Puma as the app server
-gem 'rails', '~> 5.1.4' # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'mysql2'                             # MySQL DB
+gem 'puma', '~> 3.7'                     # Use Puma as the app server
+gem 'rails', '~> 5.1.4'                  # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rack-cors', :require => 'rack/cors' # Allows web applications to make cross domain AJAX calls without using workarounds
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
