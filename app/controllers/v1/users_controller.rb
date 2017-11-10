@@ -3,6 +3,6 @@ class V1::UsersController < ApplicationController
     users = User.all
     users = users.map { |user| "#{user.first_name} #{user.last_name}" } if users.any?
 
-    render json: { users: users }, status: 201
+    render json: { users: users }, status: 200
   end
 end
