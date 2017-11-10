@@ -1,8 +1,17 @@
 class V1::UsersController < ApplicationController
   def index
     users = User.all
-    users = users.map { |user| "#{user.first_name} #{user.last_name}" } if users.any?
+    response = []
 
-    render json: users, status: 200
+    if users.any?
+      response = users.map do |user|
+        {
+          name: "#{user.first_name} #{user.last_name}",
+          days: user.vacations_days_left
+        }
+      end
+    end
+
+    render json: response, status: 200
   end
 end
