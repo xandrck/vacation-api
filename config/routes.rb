@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   # API Namespace
   namespace :v1 do
     resources :users, only: %i[index show]
+    resources :vacations, only: :create
   end
 end
